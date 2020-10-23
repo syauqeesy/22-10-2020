@@ -1,7 +1,7 @@
 const biodata = {
   name: `Ahmad Syauqi`,
   age: 18,
-  hobbies: [`Listening Music`, `Programming`, `Technology`],
+  hobbies: [ `Listening Music`, `Programming`, `Technology` ],
   isMarried: false,
   schoolList: [
     {
