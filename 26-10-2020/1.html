@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1</title>
+</head>
+<body>
+  <button>click me!</button>
+  
+  <script>
+    // 1. JSON.parse()
+    // JSON.parse() digunakan untuk mengubah data JSON menjadi JavaSript object
+    // agar data dapat diolah dengan mudah menggunakan bahasa pemrograman JavaScript
+    console.log(JSON.parse(`{ "name": "Ahmad Syauqi", "age": 18, "skills": [ "HTML", "CSS", "JavaScript" ] }`))
+
+    // 2. JSON.stringIfy()
+    // JSON.stringify() digunakan untuk mengubah data object menjadi JSON
+    // data diubah menjadi JSON karena biasanya bahasa program back-end dapat mengenali dan mengolah data JSON
+    console.log(JSON.stringify({ id: 23, name: 'Gaming Keyboard', price: 1200000 }))
+
+    // 3. console.log()
+    // console.log() digunakan untuk menampilkan sesuatu ke dalam console
+    // method ini biasanya digunakan untuk debugging
+    console.log({ id: 1, username: 'syauqeesy', jwt: 'kshw82ns0fj8ksfe' })
+
+    // 4. document.querySelector()
+    // document.querySelector() digunakan untuk menyeleksi atau mengambil elemen dom
+    // yang nantinya akan dimanipulasi menggunakan JavaScript
+    const button = document.querySelector('button')
+    console.log(button)
+
+    // 5. element.addEventListener()
+    // element.addEventListener() digunakan untuk menghandle event
+    button.addEventListener('click', () => {
+      alert(`I'm clicked!`)
+    })
+  </script>
+</body>
+</html>
