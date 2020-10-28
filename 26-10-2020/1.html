@@ -35,6 +35,37 @@
     button.addEventListener('click', () => {
       alert(`I'm clicked!`)
     })
+
+    // 6. fetch()
+    // fetch() digunakan untuk mengirim request ke server
+    fetch(`https://jsonplaceholder.typicode.com/users`)
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        console.log(data)
+      })
+
+    // 7. Date()
+    // Date() akan mereturn tanggal dan waktu saat ini.
+    console.log(Date())
+
+    // 8. Math.round()
+    // Math.round() digunakan untuk membulatkan angka.
+    const number = 9.5
+    console.log(Math.round(number))
+
+    // 9. string.split()
+    // string.split() digunakan untuk memisahkan string menjadi array berdasarkan separator
+    const fruits = `apple, strawberry, peach, citrus`
+    console.log(fruits.split(', '))
+
+    // 10. element.classList.toggle()
+    // element.classList.toggle() digunakan untuk menambah class jika tidak ada pada elemen dan menghapus class jika ada pada elemen
+    button.addEventListener('click', () => {
+      button.classList.toggle('btn')
+    })
+
   </script>
 </body>
 </html>
