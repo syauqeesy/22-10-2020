@@ -4,7 +4,7 @@ const strongPasswordGenerator = () => {
       let generatedPassword = ''
       const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-='
       for (let i = 0; i < 16; i++) {
-        generatedPassword += characters.charAt(Math.floor(Math.random() * characters.length))
+        generatedPassword += characters.charAt(Math.floor(Math.random() * (characters.length - 1)))
       }
       
       if(generatedPassword) {
