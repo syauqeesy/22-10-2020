@@ -5,7 +5,7 @@ const scoresSelection = (minScore, maxScore, scores = []) => {
   }
 
   if(scores.length <= 5) {
-    console.log(`Minimum amount of score is 5`)
+    console.log(`Minimum amount of scores is 5`)
     return
   }
 
@@ -21,6 +21,6 @@ const scoresSelection = (minScore, maxScore, scores = []) => {
   return selectedScores
 }
 
-const results = scoresSelection(85, 89, [ 82, 79, 57, 78, 75, 90 ])
+const results = scoresSelection(80, 89, [ 82, 79, 57, 78, 75, 90 ])
 
 console.log(results)

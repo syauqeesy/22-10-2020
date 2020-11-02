@@ -19,7 +19,7 @@ const searchName = (keyword, maxOutput = 1, callback) => {
   return callback(keyword, maxOutput, names)
 }
 
-const results = searchName('an', 3, (keyword, maxOutput, names) => {
+const results = searchName('zz', 3, (keyword, maxOutput, names) => {
   const searchResults = names.filter((name) => {
     return name.toLowerCase().includes(keyword.toLowerCase())
   })

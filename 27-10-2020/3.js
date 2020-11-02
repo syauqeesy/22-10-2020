@@ -10,7 +10,7 @@ const strongPasswordGenerator = () => {
       if(generatedPassword) {
         resolve(generatedPassword)
       } else {
-        reject('Generate password failed')
+        reject(new Error('Generate password failed'))
       }
     }, 1000)
   })
@@ -32,8 +32,8 @@ const getProductById = (id) => {
         { id: 1, name: 'Laptop Gaming', desc: 'Super powerfull gaming laptop' },
         { id: 2, name: 'Samsung Smartphone', desc: 'Samsung smartphone for everyone' },
         { id: 3, name: 'Logitech Office Mouse', desc: 'Basic Mouse' },
-        { id: 1, name: 'Logitech G Ambidextrous', desc: 'Gaming mouse for prodigy' },
-        { id: 1, name: 'Audio-Technica Monitor Headphone', desc: 'Headphone for professional producer' }
+        { id: 4, name: 'Logitech G Ambidextrous', desc: 'Gaming mouse for prodigy' },
+        { id: 5, name: 'Audio-Technica Monitor Headphone', desc: 'Headphone for professional producer' }
       ]
 
       const product = products.filter((product) => {
