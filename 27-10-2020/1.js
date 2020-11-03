@@ -22,7 +22,7 @@ cekHariKerja('minggu')
   .catch((error) => {
     console.log(error.message)
   })
-// .then() dan .catch() digunakan untuk menghandle promise. .then untuk manghandle jika promisenya fulfilled
+// .then() dan .catch() digunakan untuk menghandle promise. .then() untuk manghandle jika promisenya fulfilled
 // .catch() digunakan untuk menghandle jika promisenya rejected
 // kedua menthod ini menerima parameter callback function untuk menghandle aksi selanjutnya
 

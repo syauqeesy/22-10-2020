@@ -36,11 +36,11 @@ const getProductById = (id) => {
         { id: 5, name: 'Audio-Technica Monitor Headphone', desc: 'Headphone for professional producer' }
       ]
 
-      const product = products.filter((product) => {
+      const product = products.find((product) => {
         return product.id === id
       })
 
-      if(!product.length < 1) {
+      if(product) {
         resolve(product)
       } else {
         reject(new Error('Product not found'))
