@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+nav {
+  background-color: salmon;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 3.5rem 0 3.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 1rem 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+header {
+  width: 100vw;
+}
+
+header img {
+  width: 100%;
+  background-size: cover;
+}
+
+section main h2 {
+  margin-bottom: 2rem;
+}
+
+section main p {
+  margin-bottom: 3rem;
+}
+
+section {
+  display: flex;
+  padding: 0 1rem 0 1rem;
+  flex-wrap: wrap;
+}
+
+section main, section aside {
+  background-color: sandybrown;
+  box-shadow: 4px 4px 5px #b3b3b3;
+  margin: 1rem;
+  padding: 2rem;
+}
+
+section main {
+  flex: 4;
+}
+
+section aside {
+  flex: 2;
+}
+
+section aside p {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+footer {
+  height: 100px;
+  background-color: salmon;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer h2 {
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  nav {
+    justify-content: center;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+}
