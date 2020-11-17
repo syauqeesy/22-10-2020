@@ -1,17 +1,18 @@
-const express = require('express')
-const routes = {
-  User: require('./src/routes/User')
-}
-
 class Server {
 
-  constructor(express, port, routes) {
-    this.express = express
-    this.app = express()
+  constructor(port) {
+    this.express = require('express')
+    this.app = this.express()
     this.port = port
-    this.routes = routes
+    this.middlewares = {
+      bodyParser: require('body-parser')
+    }
+    this.routes = {
+      user: require('./src/routes/user')
+    }
 
-    this.runServer(port)
+    this.runServer(this.port)
+    this.runMiddlewares(this.middlewares)
     this.runRoutes(this.routes)
   }
 
@@ -24,9 +25,13 @@ class Server {
   }
 
   runRoutes(routes) {
-    this.app.use('/user', routes.User)
+    this.app.use('/user', routes.user)
+  }
+
+  runMiddlewares(middlewares) {
+    this.app.use(middlewares.bodyParser.json())
   }
 
 }
 
-new Server(express, 5000, routes)
+new Server(5000)

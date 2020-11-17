@@ -1,7 +1,10 @@
 const express = require('express')
 const router = express.Router()
+const User = require('../controllers/User')
 
 module.exports = router
-  .get('/', (req, res) => {
-    res.json({ message: 'Welcome to index' })
-  })
+  .get('/', User.getUsers)
+  .get('/:id', User.getUserById)
+  .post('/', User.createNewUser)
+  .patch('/:id', User.updateUser)
+  .delete('/:id', User.deleteUser)
