@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 class Server {
 
   constructor(port) {
@@ -18,20 +20,20 @@ class Server {
 
   runServer(port) {
     try {
-      this.app.listen(port, () => console.log('server started'))
+      this.app.listen(port, () => console.log(`server started on port ${port}`))
     } catch(error) {
       console.log(error)
     }
-  }
-
-  runRoutes(routes) {
-    this.app.use('/user', routes.user)
   }
 
   runMiddlewares(middlewares) {
     this.app.use(middlewares.bodyParser.json())
   }
 
+  runRoutes(routes) {
+    this.app.use('/user', routes.user)
+  }
+
 }
 
-new Server(5000)
+new Server(process.env.PORT)

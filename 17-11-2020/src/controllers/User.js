@@ -1,34 +1,33 @@
 const UserModel = require('../models/User')
+const responseHelper = require('../helpers/response')
 
 class User {
   
   async getUsers(req, res) {
     try {
       const users = await UserModel.getUsers()
-      res.send(users)
+      responseHelper(res, users, 200, null)
     } catch (error) {
-      console.log(error)
-      res.send(error)
+      responseHelper(res, {}, 500, error)
     }
   }
 
   async getUserById(req, res) {
     try {
       const user = await UserModel.getUserById(req.params.id)
-      res.send(user)
+      if(!user) return responseHelper(res, user, 404, { message: 'User not found' })
+      responseHelper(res, user, 200, null)
     } catch (error) {
-      console.log(error)
-      res.send(error)
+      responseHelper(res, users, 500, error)
     }
   }
 
   async createNewUser(req, res) {
     try {
       const results = await UserModel.insertNewUser(req.body)
-      res.send(results)
+      responseHelper(res, results, 201, null)
     } catch (error) {
-      console.log(error)
-      res.send(error)
+      responseHelper(res, users, 500, error)
     }
   }
 
@@ -44,20 +43,18 @@ class User {
       }
 
       const results = await UserModel.updateUser(req.params.id, data)
-      res.send(results)
+      responseHelper(res, results, 200, null)
     } catch (error) {
-      console.log(error)
-      res.send(error)
+      responseHelper(res, results, 500, error)
     }
   }
 
   async deleteUser(req, res) {
     try {
       const results = await UserModel.deleteUser(req.params.id)
-      res.send(results)
+      responseHelper(res, results, 200, null)
     } catch (error) {
-      console.log(error)
-      res.send(error)
+      responseHelper(res, results, 500, null)
     }
   }
 
