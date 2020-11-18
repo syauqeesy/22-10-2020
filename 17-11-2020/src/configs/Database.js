@@ -1,4 +1,5 @@
 class Database {
+
   constructor() {
     this.mysql = require('mysql')
     
@@ -13,6 +14,7 @@ class Database {
       database: 'crud'
     })
   }
+
 }
 
 module.exports = new Database
