@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const UserModel = require('../controllers/User')
+const UserController = require('../controllers/User')
 
 module.exports = router
-  .get('/', UserModel.getUsers)
-  .get('/:id', UserModel.getUserById)
-  .post('/', UserModel.createNewUser)
-  .patch('/:id', UserModel.updateUser)
-  .delete('/:id', UserModel.deleteUser)
+  .get('/', UserController.getUsers)
+  .get('/:id', UserController.getUserById)
+  .post('/', UserController.createNewUser)
+  .patch('/:id', UserController.updateUser)
+  .delete('/:id', UserController.deleteUser)
