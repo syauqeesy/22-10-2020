@@ -62,7 +62,7 @@ export default {
 
 <style scoped lang="sass">
 .card
-  padding: 1em
+  padding: 1.5em
   border: 1px solid #eee
   width: 30%
   margin: 1em auto
